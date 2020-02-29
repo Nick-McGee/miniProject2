@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main extends Thread{
@@ -12,23 +13,36 @@ public class Main extends Thread{
         System.out.print("Time: ");
         int maxTime = Integer.parseInt(in.nextLine());
 
+        // create n slave threads
         for(int i = 0; i < slaves; i++) {
+            int wait = (int)(Math.random() * (10-5 + 1)) + 5;  // create random wait time
+
             System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", slaves, maxTime, java.time.LocalTime.now()));
-            System.out.println(String.format("Producer: Sleeping for %d seconds", maxTime));
+            System.out.println(String.format("Producer: Sleeping for %d seconds", wait));
 
-            (new Main()).start();
+            (new Main()).start();  // creating the slave threads
 
+            // master wait time
             try {
-                Thread.sleep(1000);
+                Thread.sleep(wait * 100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
     }
 
+    // running the thread
     public void run() {
-        System.out.println("Hello from a thread!");
+        System.out.println("Thread sleeping...");
+
+        // thread wait time
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Thread waking up.");
     }
 
 }
