@@ -17,14 +17,14 @@ public class Main extends Thread{
         for(int i = 0; i < slaves; i++) {
             int wait = (int)(Math.random() * (10-5 + 1)) + 5;  // create random wait time
 
-            System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", slaves, maxTime, java.time.LocalTime.now()));
+            System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", i+1, maxTime, java.time.LocalTime.now()));
             System.out.println(String.format("Producer: Sleeping for %d seconds", wait));
 
             (new Main()).start();  // creating the slave threads
 
             // master wait time
             try {
-                Thread.sleep(wait * 100);
+                Thread.sleep(wait * 1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -44,5 +44,4 @@ public class Main extends Thread{
 
         System.out.println("Thread waking up.");
     }
-
 }
