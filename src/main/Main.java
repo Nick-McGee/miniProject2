@@ -18,7 +18,7 @@ public class Main {
         Thread[] slaves = new Thread[slaveCount];
 
         for (int i = 0; i < slaveCount; i++) {
-            slaves[i] = new Thread(new Slave(i+1, maxTime));
+            slaves[i] = new Thread(new Slave(i+1);
         }
 
         // create n slave threads
@@ -32,7 +32,7 @@ public class Main {
             int threadName = i+1;
 
             // this should add them to the queue, not start them
-            Thread slave = new Thread(new Slave(threadName, maxTime));
+            Thread slave = new Thread(new Slave(threadName));
             slave.start();// create slave thread and run it
 
             // master wait time
@@ -47,15 +47,13 @@ public class Main {
 
 class Slave implements Runnable {
     int id;        // given thread id
-    int maxTime;   // given length
 
-    Slave(int id, int maxTime) {
+    Slave(int id) {
         this.id = id;
-        this.maxTime = maxTime;
     }
 
     public void run() {
-        System.out.println(String.format("Consumer: Assigned request ID %d, processing request for the next %d seconds, current time is %s\n", id, maxTime, java.time.LocalTime.now()));
+    //    System.out.println(String.format("Consumer: Assigned request ID %d, processing request for the next %d seconds, current time is %s\n", id, maxTime, java.time.LocalTime.now()));
 
         // thread wait time (not complete)
         try {
