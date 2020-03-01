@@ -1,3 +1,3 @@
-# miniProject2
+# MiniProject2 - COSC 315
 
-please  help
+Authors: Nick, Raghav, and Carlos
