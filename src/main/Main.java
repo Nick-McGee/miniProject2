@@ -1,8 +1,6 @@
 package main;
 
 import java.util.Scanner;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Main {
 
@@ -12,71 +10,38 @@ public class Main {
         // Get input
         System.out.print("Slaves: ");
         int slaveCount = Integer.parseInt(in.nextLine());
-        System.out.print("Time: ");
+        System.out.print("Random Time to sleep for requests: ");
         int maxTime = Integer.parseInt(in.nextLine());
 
-        Thread[] slaves = new Thread[slaveCount];
+        HttpRequest.setRandDelay(maxTime);
 
-        for (int i = 0; i < slaveCount; i++) {
-            slaves[i] = new Thread(new Slave(i+1);
-        }
+        Webserver webserver = new Webserver();
+        webserver.listen(slaveCount); //Listen with 50 threads
 
-        // create n slave threads
-        for (int i = 0; i < slaveCount; i++) {
-            int wait = (int) (Math.random() * (10 - 5 + 1)) + 5;  // create random wait time (THIS IS WRONG)
-
-            // output producer text
-            System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", i + 1, maxTime, java.time.LocalTime.now()));
-            System.out.println(String.format("Producer: Sleeping for %d seconds\n", wait));
-
-            int threadName = i+1;
-
-            // this should add them to the queue, not start them
-            Thread slave = new Thread(new Slave(threadName));
-            slave.start();// create slave thread and run it
-
-            // master wait time
+        //Simulate 200 incoming requests
+        for(int i = 0; i < 200; i++) {
             try {
-                Thread.sleep(wait * 1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
+                //Sleep for a random time between 0 and 100ms for each request
+                Thread.sleep((int)(Math.random() * 100));
+                //Produce request
+                HttpRequest request = new HttpRequest();
 
-class Slave implements Runnable {
-    int id;        // given thread id
+                System.out.println(
+                        String.format(
+                                "Producer: Queueing request ID %d at time %s",
+                                request.getId(),
+                                java.time.LocalTime.now()
+                        )
+                );
 
-    Slave(int id) {
-        this.id = id;
-    }
-
-    public void run() {
-    //    System.out.println(String.format("Consumer: Assigned request ID %d, processing request for the next %d seconds, current time is %s\n", id, maxTime, java.time.LocalTime.now()));
-
-        // thread wait time (not complete)
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+                //Queue request
+                webserver.addRequest(request);
+            } catch(InterruptedException ignore) { }
         }
 
-        System.out.println(String.format("Consumer: Completed request ID %d at time %s\n", id, java.time.LocalTime.now()));
-    }
-}
+        //Gracefully stop the webserver and all its slave threads
+        webserver.stop();
 
-class processQueue {
-    private Queue<Integer> queue = new LinkedList<Integer>();
 
-    public synchronized void Add(int process) {
-        queue.add(process);
-        notify();
-    }
-
-    public synchronized int Remove() throws InterruptedException {
-        while(queue.isEmpty())
-            wait();
-        return queue.remove();  // is this right?
     }
 }
