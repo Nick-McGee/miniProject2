@@ -1,6 +1,8 @@
 package main;
 
 import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Main {
 
@@ -9,12 +11,18 @@ public class Main {
 
         // Get input
         System.out.print("Slaves: ");
-        int slaves = Integer.parseInt(in.nextLine());
+        int slaveCount = Integer.parseInt(in.nextLine());
         System.out.print("Time: ");
         int maxTime = Integer.parseInt(in.nextLine());
 
+        Thread[] slaves = new Thread[slaveCount];
+
+        for (int i = 0; i < slaveCount; i++) {
+            slaves[i] = new Thread(new Slave(i+1, maxTime));
+        }
+
         // create n slave threads
-        for (int i = 0; i < slaves; i++) {
+        for (int i = 0; i < slaveCount; i++) {
             int wait = (int) (Math.random() * (10 - 5 + 1)) + 5;  // create random wait time (THIS IS WRONG)
 
             // output producer text
@@ -57,5 +65,20 @@ class Slave implements Runnable {
         }
 
         System.out.println(String.format("Consumer: Completed request ID %d at time %s\n", id, java.time.LocalTime.now()));
+    }
+}
+
+class processQueue {
+    private Queue<Integer> queue = new LinkedList<Integer>();
+
+    public synchronized void Add(int process) {
+        queue.add(process);
+        notify();
+    }
+
+    public synchronized int Remove() throws InterruptedException {
+        while(queue.isEmpty())
+            wait();
+        return queue.remove();  // is this right?
     }
 }
