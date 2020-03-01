@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-public class Main implements Runnable{
+public class Main {
 
     public static void main(String args[]) {
         Scanner in = new Scanner(System.in);
@@ -14,15 +14,18 @@ public class Main implements Runnable{
         int maxTime = Integer.parseInt(in.nextLine());
 
         // create n slave threads
-        for(int i = 0; i < slaves; i++) {
-            int wait = (int)(Math.random() * (10-5 + 1)) + 5;  // create random wait time
+        for (int i = 0; i < slaves; i++) {
+            int wait = (int) (Math.random() * (10 - 5 + 1)) + 5;  // create random wait time (THIS IS WRONG)
 
             // output producer text
-            System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", i+1, maxTime, java.time.LocalTime.now()));
+            System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", i + 1, maxTime, java.time.LocalTime.now()));
             System.out.println(String.format("Producer: Sleeping for %d seconds", wait));
 
-            // this add them to the queue, not start them
-            (new Thread(new Main())).start(); // create slave thread and run it
+            int threadName = i+1;
+
+            // this should add them to the queue, not start them
+            Thread slave = new Thread(new Slave(threadName));
+            slave.start();// create slave thread and run it
 
             // master wait time
             try {
@@ -32,12 +35,22 @@ public class Main implements Runnable{
             }
         }
     }
+}
 
-    // running the thread
+class Slave implements Runnable {
+    int id;  // given thread id
+
+    Slave(int id) {
+        this.id = id;
+    }
+
     public void run() {
+    //    System.out.println(String.format("Consumer: Assigned request ID %d, length %d seconds at time %s", id, maxTime, java.time.LocalTime.now()));
+    //    System.out.println(String.format("Consumer: Sleeping for %d seconds", wait));
+
         System.out.println("Thread is busy.");
 
-        // thread wait time
+        // thread wait time (not complete)
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
@@ -45,5 +58,6 @@ public class Main implements Runnable{
         }
 
         System.out.println("Thread is idle.");
+
     }
 }
