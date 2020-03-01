@@ -25,7 +25,7 @@ class Slave implements Runnable {
                 if(master.isListening()) {
 
                     HttpRequest request = master.getRequest();
-                    request.process(); //simulates processing request, 500ms delay
+                    request.process(); //simulates processing request, random delay
 
                     System.out.println(
                             String.format(
