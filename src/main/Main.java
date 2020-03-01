@@ -19,12 +19,12 @@ public class Main {
 
             // output producer text
             System.out.println(String.format("Producer: Produced request ID %d, length %d seconds at time %s", i + 1, maxTime, java.time.LocalTime.now()));
-            System.out.println(String.format("Producer: Sleeping for %d seconds", wait));
+            System.out.println(String.format("Producer: Sleeping for %d seconds\n", wait));
 
             int threadName = i+1;
 
             // this should add them to the queue, not start them
-            Thread slave = new Thread(new Slave(threadName));
+            Thread slave = new Thread(new Slave(threadName, maxTime));
             slave.start();// create slave thread and run it
 
             // master wait time
@@ -38,17 +38,16 @@ public class Main {
 }
 
 class Slave implements Runnable {
-    int id;  // given thread id
+    int id;        // given thread id
+    int maxTime;   // given length
 
-    Slave(int id) {
+    Slave(int id, int maxTime) {
         this.id = id;
+        this.maxTime = maxTime;
     }
 
     public void run() {
-    //    System.out.println(String.format("Consumer: Assigned request ID %d, length %d seconds at time %s", id, maxTime, java.time.LocalTime.now()));
-    //    System.out.println(String.format("Consumer: Sleeping for %d seconds", wait));
-
-        System.out.println("Thread is busy.");
+        System.out.println(String.format("Consumer: Assigned request ID %d, processing request for the next %d seconds, current time is %s\n", id, maxTime, java.time.LocalTime.now()));
 
         // thread wait time (not complete)
         try {
@@ -57,7 +56,6 @@ class Slave implements Runnable {
             e.printStackTrace();
         }
 
-        System.out.println("Thread is idle.");
-
+        System.out.println(String.format("Consumer: Completed request ID %d at time %s\n", id, java.time.LocalTime.now()));
     }
 }
