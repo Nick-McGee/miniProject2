@@ -8,9 +8,9 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         // Get input
-        System.out.print("Slaves: ");
+        System.out.print("Slaves (Recommended 50): ");
         int slaveCount = Integer.parseInt(in.nextLine());
-        System.out.print("Random Time to sleep for requests: ");
+        System.out.print("Random Time to sleep for requests (Recommended 3): ");
         int maxTime = Integer.parseInt(in.nextLine());
 
         HttpRequest.setRandDelay(maxTime);
