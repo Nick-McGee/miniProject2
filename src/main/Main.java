@@ -10,7 +10,7 @@ public class Main {
         // Get input
         System.out.print("Slaves (Recommended 50): ");
         int slaveCount = Integer.parseInt(in.nextLine());
-        System.out.print("Random Time to sleep for requests (Recommended 3): ");
+        System.out.print("Random time to sleep (in seconds) for requests (Recommended 3): ");
         int maxTime = Integer.parseInt(in.nextLine());
 
         HttpRequest.setRandDelay(maxTime);
@@ -18,6 +18,7 @@ public class Main {
         Webserver webserver = new Webserver();
         webserver.listen(slaveCount); //Listen with # of slaves provided by user
 
+        double time = System.currentTimeMillis();
         //Simulate 200 incoming requests
         for(int i = 0; i < 200; i++) {
             try {
@@ -42,6 +43,9 @@ public class Main {
         //Gracefully stop the webserver and all its slave threads
         webserver.stop();
 
+        time = System.currentTimeMillis() - time;
 
+        System.out.println("Time taken to process 200 requests: " + (time/1000) + "s");
+        System.out.println("Average time per request: " + ((time/1000)/200) + "s");
     }
 }
