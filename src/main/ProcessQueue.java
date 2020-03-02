@@ -25,7 +25,7 @@ public class ProcessQueue {
      */
     public void add(HttpRequest request) {
         synchronized (lock) {
-            queue.add(request);
+            this.queue.add(request);
         }
     }
 
@@ -35,7 +35,17 @@ public class ProcessQueue {
      */
     public synchronized HttpRequest remove() {
         synchronized (lock) {
-            return queue.remove();
+            return this.queue.remove();
+        }
+    }
+
+    /**
+     * Returns the number of remaining requests in the queue
+     * @return the length of the Queue
+     */
+    public int getLength() {
+        synchronized (lock) {
+            return this.queue.size();
         }
     }
 }

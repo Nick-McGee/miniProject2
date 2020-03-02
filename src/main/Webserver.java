@@ -16,7 +16,7 @@ public class Webserver {
     /**
      * Stores slave threads
      */
-    Slave[] slaves;
+    Thread[] slaves;
 
     /**
      * Stores incoming requests
@@ -39,12 +39,13 @@ public class Webserver {
      */
     public void listen(int threads) {
         this.setListening(true);
-        slaves = new Slave[threads];
+        slaves = new Thread[threads];
         //Spawn slave threads
         for(int i = 0; i < threads; i++) {
-            slaves[i] = new Slave(i+1, this);
-            Thread t = new Thread(slaves[i]);
+            Slave slave = new Slave(i+1, this);
+            Thread t = new Thread(slave);
             t.start();
+            slaves[i] = t;
         }
     }
 
@@ -65,6 +66,13 @@ public class Webserver {
      */
     public HttpRequest getRequest() {
         return this.requests.remove();
+    }
+
+    /**
+     * @return number of requests in webserver queue
+     */
+    public int getQueueSize() {
+        return this.requests.getLength();
     }
 
     /**
@@ -92,7 +100,6 @@ public class Webserver {
         return this.monitor;
     }
 
-
     /**
      * Stops the webserver
      */
@@ -100,6 +107,15 @@ public class Webserver {
         this.setListening(false);
         synchronized (this.monitor) {
             this.monitor.notifyAll(); //All threads become active and exit
+        }
+
+        //Block until all slaves done
+        for (Thread slave : slaves) {
+            try {
+                slave.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

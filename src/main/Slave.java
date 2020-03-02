@@ -24,21 +24,30 @@ class Slave implements Runnable {
                 //once again
                 if(master.isListening()) {
 
-                    HttpRequest request = master.getRequest();
-                    request.process(); //simulates processing request, random delay
+                    processRequest();
 
-                    System.out.println(
-                            String.format(
-                                    "Consumer %d: Completed request ID %d at time %s",
-                                    id,
-                                    request.getId(),
-                                    java.time.LocalTime.now()
-                            )
-                    );
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+
+        //Make sure remaining requests in the queue server served
+        while(master.getQueueSize() > 0) {
+            processRequest();
+        }
+    }
+
+    private void processRequest() {
+        HttpRequest request = master.getRequest();
+        request.process(); //simulates processing request, random delay
+        System.out.println(
+                String.format(
+                        "Consumer %d: Completed request ID %d at time %s",
+                        id,
+                        request.getId(),
+                        java.time.LocalTime.now()
+                )
+        );
     }
 }
