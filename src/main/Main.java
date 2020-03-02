@@ -16,7 +16,7 @@ public class Main {
         HttpRequest.setRandDelay(maxTime);
 
         Webserver webserver = new Webserver();
-        webserver.listen(slaveCount); //Listen with 50 threads
+        webserver.listen(slaveCount); //Listen with # of slaves provided by user
 
         //Simulate 200 incoming requests
         for(int i = 0; i < 200; i++) {
