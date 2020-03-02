@@ -42,8 +42,7 @@ public class Webserver {
         slaves = new Thread[threads];
         //Spawn slave threads
         for(int i = 0; i < threads; i++) {
-            Slave slave = new Slave(i+1, this);
-            Thread t = new Thread(slave);
+            Thread t = new Thread(new Slave(i+1, this));
             t.start();
             slaves[i] = t;
         }
