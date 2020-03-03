@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
         // Get input
         System.out.print("Slaves (Recommended 50): ");
-        int slaveCount = Integer.parseInt(in.nextLine());
-        System.out.print("Random time to sleep (in seconds) for requests (Recommended 3): ");
-        int maxTime = Integer.parseInt(in.nextLine());
+        int slaveCount = in.nextInt();
+        System.out.print("Max random time to sleep (in seconds) for requests (Recommended 3): ");
+        int maxTime = in.nextInt();
+        System.out.print("Number of requests to simulate: ");
+        int numRequests = in.nextInt();
 
         HttpRequest.setRandDelay(maxTime);
 
@@ -20,7 +22,7 @@ public class Main {
 
         double time = System.currentTimeMillis();
         //Simulate 200 incoming requests
-        for(int i = 0; i < 200; i++) {
+        for(int i = 0; i < numRequests; i++) {
             try {
                 //Sleep for a random time between 0 and 100ms for each request
                 Thread.sleep((int)(Math.random() * 100));
@@ -45,7 +47,7 @@ public class Main {
 
         time = System.currentTimeMillis() - time;
 
-        System.out.println("Time taken to process 200 requests: " + (time/1000) + "s");
-        System.out.println("Average time per request: " + ((time/1000)/200) + "s");
+        System.out.println("Time taken to process " + numRequests + " requests: " + (time/1000) + "s");
+        System.out.println("Average time per request: " + ((time/1000)/numRequests) + "s");
     }
 }

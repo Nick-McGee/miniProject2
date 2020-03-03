@@ -5,6 +5,10 @@ import java.util.Queue;
 
 public class ProcessQueue {
     /**
+     * Maximum number of requests in the queue
+     */
+    private static final int QUEUE_BOUND = 100;
+    /**
      * Queue storing requests
      */
     private Queue<HttpRequest> queue;
@@ -25,7 +29,8 @@ public class ProcessQueue {
      */
     public void add(HttpRequest request) {
         synchronized (lock) {
-            this.queue.add(request);
+            if(queue.size() < QUEUE_BOUND)
+                this.queue.add(request);
         }
     }
 
