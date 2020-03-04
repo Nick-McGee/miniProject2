@@ -2,7 +2,7 @@
 
 Authors: Nick, Raghav, and Carlos
 
-**Part 1 (Java program files):
+**Part 1 (Java program files):**
 
 HttpRequest.java:
 ProcessQueue.java
@@ -10,4 +10,4 @@ Slave.java
 Webserver.java
 Main.java
 
-**Part 2 (C++ program files:
+**Part 2 (C++ program files:**
