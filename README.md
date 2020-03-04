@@ -1,6 +1,6 @@
 # MiniProject2 - COSC 315
 
-####### Authors: Nick, Raghav, and Carlos
+#######Authors: Nick, Raghav, and Carlos
 - Nick's contribution: Design and development of the Java version
 - Raghav's contribution: Design and development of the Java and C++ version
 - Carlos' contribution: Design and development of the C++ version and README write up
