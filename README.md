@@ -69,7 +69,7 @@ Carlos:
 - For this project I had to learn C++ as I already had knowledge in Java. When trying to implement the similar web server request scheduler we used for the Java implementation in C++, I was really struggling. But more specficially I struggled most when I was setting up my complier, MakeFile, and other unique things I needed to write C++
 
 Nick:
--
+- For Java, I struggled a lot and I didn't know what the fuck I was doing for about 4 hours, until it all clicked and I understood.
 
 Raghav:
 - For Java, the implementation was relatively easy. Due to keywords like synchronized, and the fact that every object has a .wait(), .notify() and .notifyAll() method by default, Java was simple and quick.
