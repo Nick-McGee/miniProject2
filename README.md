@@ -57,5 +57,9 @@ main.cpp:
 - A consume method that consumes (pops) work from the buffer. Synchronisation used to give access to one thread at a time to the critical section when the processes are being popped from the queue.
 - A consumer method run by each slave thread making sure they consume from the queue as long as the buffer(queue) is not empty 
 - A produce mehtod that pushes work into the buffer queue. Synchronisation used to give access to one thread at a time to the critical section (the pushing of the queue). Do not want multiple threads pushing the queue at a time.
-- A main method that
+- A main method that get the user input on the number of slaves, max random time sleeping, and the number of jobs to be produced.
+- Create the slaves threads and store them.
+- Simulate the requests and then sleep each produce for a time period between 0 - 100m.
+- When all the work is queued, notify all of the threads to stop and wait for all the threads to join. 
+- Once all threads are shut down proceed to exit.
 
