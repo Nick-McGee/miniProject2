@@ -10,7 +10,7 @@
 **Part 1 (Java program files):**
 
 *Note: To compile the code on the Linux do the following:*
-- Download the `src` directory on GitHub then run this command: `javac src/main/*.java && java -cp src/ main.Main`
+- Set the directory to the directory containg `src` directory, and then run this command: `javac src/main/*.java && java -cp src/ main.Main`
 
 HttpRequest.java:
 - HttpRequest object represents the process we are sending to the queue.
