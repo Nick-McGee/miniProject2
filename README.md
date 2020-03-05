@@ -45,8 +45,7 @@ Main.java:
 
 **Part 2 C++ program files:**
 
-*Note: To complile the code on the Linux use the following command in the command prompt:* 
-g++ -std=c++11 -pthread -o main main.cpp && ./main
+Note: To complile the code on the Linux use the following command in the command prompt:g++ -std=c++11 -pthread -o main main.cpp && ./main
 
 main.cpp:
 - In
