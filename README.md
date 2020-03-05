@@ -73,4 +73,4 @@ Nick:
 
 Raghav:
 - For Java, the implementation was relatively easy. Due to keywords like synchronized, and the fact that every object has a .wait(), .notify() and .notifyAll() method by default, Java was simple and quick.
-- 
+- For C++, this was harder. Since there are no monitors, we used a condition variable. However, because the C++ compiler sometimes gives vague error messages, it was harder to implement. Moreover, there were somethings that just didn't make sense e.g. adding a thread object to a vector in c++ wasn't as simple as vector.push_back(thread), but vector.push_back(move(thread)). The reason for this was how C++ handles memory. Overall, C++ took longer and was harder but is still faster than Java in general programming.
