@@ -1,0 +1,85 @@
+Slaves (Recommended 50): 20
+Max random time to sleep (in seconds) for requests (Recommended 3): 2
+Number of requests to simulate: 40
+Producer: Queueing request ID 1 at time 18:23:08.291
+Producer: Queueing request ID 2 at time 18:23:08.486
+Producer: Queueing request ID 3 at time 18:23:08.535
+Producer: Queueing request ID 4 at time 18:23:08.619
+Producer: Queueing request ID 5 at time 18:23:08.713
+Producer: Queueing request ID 6 at time 18:23:08.735
+Producer: Queueing request ID 7 at time 18:23:08.738
+Producer: Queueing request ID 8 at time 18:23:08.788
+Producer: Queueing request ID 9 at time 18:23:08.882
+Producer: Queueing request ID 10 at time 18:23:08.971
+Producer: Queueing request ID 11 at time 18:23:09.060
+Producer: Queueing request ID 12 at time 18:23:09.139
+Producer: Queueing request ID 13 at time 18:23:09.160
+Producer: Queueing request ID 14 at time 18:23:09.225
+Producer: Queueing request ID 15 at time 18:23:09.274
+Producer: Queueing request ID 16 at time 18:23:09.357
+Producer: Queueing request ID 17 at time 18:23:09.370
+Consumer 1: Completed request ID 1 at time 18:23:09.396
+Producer: Queueing request ID 18 at time 18:23:09.438
+Consumer 2: Completed request ID 2 at time 18:23:09.488
+Producer: Queueing request ID 19 at time 18:23:09.496
+Consumer 3: Completed request ID 3 at time 18:23:09.540
+Producer: Queueing request ID 20 at time 18:23:09.578
+Consumer 4: Completed request ID 4 at time 18:23:09.621
+Producer: Queueing request ID 21 at time 18:23:09.665
+Consumer 5: Completed request ID 5 at time 18:23:09.714
+Consumer 6: Completed request ID 6 at time 18:23:09.736
+Producer: Queueing request ID 22 at time 18:23:09.737
+Consumer 7: Completed request ID 7 at time 18:23:09.740
+Consumer 8: Completed request ID 8 at time 18:23:09.791
+Producer: Queueing request ID 23 at time 18:23:09.817
+Producer: Queueing request ID 24 at time 18:23:09.833
+Producer: Queueing request ID 25 at time 18:23:09.923
+Producer: Queueing request ID 26 at time 18:23:09.966
+Producer: Queueing request ID 27 at time 18:23:10.012
+Producer: Queueing request ID 28 at time 18:23:10.093
+Consumer 13: Completed request ID 13 at time 18:23:10.163
+Producer: Queueing request ID 29 at time 18:23:10.190
+Producer: Queueing request ID 30 at time 18:23:10.215
+Consumer 14: Completed request ID 14 at time 18:23:10.227
+Producer: Queueing request ID 31 at time 18:23:10.263
+Producer: Queueing request ID 32 at time 18:23:10.272
+Consumer 16: Completed request ID 16 at time 18:23:10.360
+Producer: Queueing request ID 33 at time 18:23:10.371
+Consumer 17: Completed request ID 17 at time 18:23:10.371
+Producer: Queueing request ID 34 at time 18:23:10.381
+Producer: Queueing request ID 35 at time 18:23:10.383
+Producer: Queueing request ID 36 at time 18:23:10.421
+Producer: Queueing request ID 37 at time 18:23:10.442
+Producer: Queueing request ID 38 at time 18:23:10.540
+Consumer 20: Completed request ID 20 at time 18:23:10.580
+Producer: Queueing request ID 39 at time 18:23:10.585
+Producer: Queueing request ID 40 at time 18:23:10.636
+Consumer 2: Completed request ID 22 at time 18:23:10.743
+Consumer 4: Completed request ID 24 at time 18:23:10.835
+Consumer 9: Completed request ID 9 at time 18:23:10.883
+Consumer 10: Completed request ID 10 at time 18:23:10.973
+Consumer 11: Completed request ID 11 at time 18:23:11.062
+Consumer 12: Completed request ID 12 at time 18:23:11.139
+Consumer 14: Completed request ID 30 at time 18:23:11.264
+Consumer 15: Completed request ID 15 at time 18:23:11.277
+Consumer 16: Completed request ID 31 at time 18:23:11.372
+Consumer 17: Completed request ID 32 at time 18:23:11.382
+Consumer 18: Completed request ID 18 at time 18:23:11.440
+Consumer 19: Completed request ID 19 at time 18:23:11.499
+Consumer 20: Completed request ID 33 at time 18:23:11.588
+Consumer 1: Completed request ID 21 at time 18:23:11.669
+Consumer 2: Completed request ID 34 at time 18:23:11.744
+Consumer 3: Completed request ID 23 at time 18:23:11.820
+Consumer 4: Completed request ID 35 at time 18:23:11.836
+Consumer 9: Completed request ID 36 at time 18:23:11.884
+Consumer 5: Completed request ID 25 at time 18:23:11.927
+Consumer 6: Completed request ID 26 at time 18:23:11.968
+Consumer 10: Completed request ID 37 at time 18:23:11.977
+Consumer 7: Completed request ID 27 at time 18:23:12.018
+Consumer 8: Completed request ID 28 at time 18:23:12.094
+Consumer 13: Completed request ID 29 at time 18:23:12.192
+Consumer 14: Completed request ID 40 at time 18:23:12.264
+Consumer 11: Completed request ID 38 at time 18:23:13.067
+Consumer 12: Completed request ID 39 at time 18:23:13.143
+Time taken to process 40 requests: 4.968s
+Average time per request: 0.1242s

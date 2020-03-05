@@ -1,0 +1,84 @@
+➜  Desktop ./main
+Enter slave threads count: 20
+Enter M (max rand seconds): 2
+Enter number of jobs to produce (max bound = 200): 40
+Producer queueing : 0
+Consumer 1 received work : 1
+Producer queueing : 1
+Consumer 2 received work : 2
+Producer queueing : 2
+Consumer 3 received work : 3
+Producer queueing : 3
+Consumer 4 received work : 4
+Producer queueing : 4
+Consumer 5 received work : 5
+Producer queueing : 5
+Consumer 6 received work : 6
+Producer queueing : 6
+Consumer 7 received work : 7
+Producer queueing : 7
+Consumer 8 received work : 8
+Producer queueing : 8
+Consumer 9 received work : 9
+Producer queueing : 9
+Consumer 10 received work : 10
+Producer queueing : 10
+Consumer 11 received work : 11
+Producer queueing : 11
+Consumer 12 received work : 12
+Producer queueing : 12
+Consumer 13 received work : 13
+Producer queueing : 13
+Consumer 14 received work : 14
+Producer queueing : 14
+Consumer 15 received work : 15
+Producer queueing : 15
+Consumer 16 received work : 16
+Producer queueing : 16
+Consumer 17 received work : 17
+Producer queueing : 17
+Consumer 18 received work : 18
+Producer queueing : 18
+Consumer 19 received work : 19
+Producer queueing : 19
+Consumer 20 received work : 20
+Producer queueing : 20
+Consumer 2 received work : 21
+Producer queueing : 21
+Consumer 3 received work : 22
+Producer queueing : 22
+Consumer 4 received work : 23
+Producer queueing : 23
+Consumer 7 received work : 24
+Producer queueing : 24
+Producer queueing : 25
+Producer queueing : 26
+Producer queueing : 27
+Consumer 10 received work : 25
+Producer queueing : 28
+Producer queueing : 29
+Producer queueing : 30
+Consumer 14 received work : 26
+Producer queueing : 31
+Consumer 16 received work : 27
+Producer queueing : 32
+Producer queueing : 33
+Producer queueing : 34
+Producer queueing : 35
+Producer queueing : 36
+Producer queueing : 37
+Producer queueing : 38
+Consumer 1 received work : 28
+Consumer 2 received work : 29
+Producer queueing : 39
+Consumer 3 received work : 30
+Consumer 5 received work : 31
+Consumer 6 received work : 32
+Consumer 8 received work : 33
+Consumer 9 received work : 34
+Consumer 10 received work : 35
+Consumer 11 received work : 36
+Consumer 12 received work : 37
+Consumer 13 received work : 38
+Consumer 14 received work : 39
+Consumer 15 received work : 40
