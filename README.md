@@ -5,7 +5,7 @@
 - Raghav's contribution: Design and development of the Java and C++ version.
 - Carlos' contribution: Design and development of the C++ version and README write up.
 
-*Note: For the project we replicated a similar implementation of the apache web server request scheduler.*
+*Note: For Java part of the project we replicated a similar implementation of the apache web server request scheduler. For the C++ version we made a simpler version of the consumer and producer idea.*
 
 **Part 1 (Java program files):**
 
