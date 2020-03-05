@@ -60,5 +60,5 @@ main.cpp:
 - A main method that gets the user input on the number of slaves, max random time sleeping, and the number of jobs to be produced.
 - Create the slaves threads and store them.
 - Simulate the requests and then sleep each produce for a time period between 0 - 100ms.
-- When all the work is queued, notify all of the threads to stop and wait for all the threads to join. 
+- When all the work is queued, notify all of the threads to stop and join them to wait for their completion 
 - Once all threads are shut down proceed to exit.
