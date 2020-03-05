@@ -33,10 +33,20 @@ Webserver.java:
 - A stop method that stops the webserver (master thread) from execution. Notifies all the slave threads and blocks then until the work is complete. Synchronization is used for when the slaves are notified.
 
 Slave.java:
-- 
+- The slave object contains a given id and the master thread for the given slave.
+- A run method that causes the slave thread to run/execute and wait for request as long as the master thread is listening.
+- A processRequest method that processes the http request and prints out the completed request simulating the consumer. 
 
 Main.java:
--
+- Gets user input for number of slaves, maxmium random time sleeping, and the number of requests they want to simulate.
+- Create a webserver object and listen with the number of slave threads provided by the user.
+- Looping over the simulated number of request, sleep for a random period of time between 0 - 100ms and then produce the request, and then finally add the requets to the process queue.
+- Stop the websever and print out the time taken to process the requests and the average time it took for each of the request to be completed.
 
 **Part 2 (C++ program files:**
+*Note: To complile the code on the Linux use the following command in the command prompt:* 
+g++ -std=c++11 -pthread -o main main.cpp && ./main
+
+main.cpp:
+- In
 
