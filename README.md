@@ -9,6 +9,9 @@
 
 **Part 1 (Java program files):**
 
+*Note: To complile the code on the Linux do the following:*
+- Download the src/main on GitHub then run this command: javac src/main/*.java && java -cp src/ main.Main
+
 HttpRequest.java:
 - HttpRequest object represents the process we are sending to the queue.
 - The HttpRequest object contains an ID and a random time delay.
@@ -49,5 +52,10 @@ Main.java:
 - g++ -std=c++11 -pthread -o main main.cpp && ./main
 
 main.cpp:
-- In
+- Similar to the java implementation in the Main.java we get the same input variables from the user and delcare necessary variables. One difference is we are using semaphores as opposed to monitors.
+- A sleep method that puts a thread to sleep for a specified time.
+- A consume method that consumes (pops) work from the buffer. Synchronisation used to give access to one thread at a time to the critical section when the processes are being popped from the queue.
+- A consumer method run by each slave thread making sure they consume from the queue as long as the buffer(queue) is not empty 
+- A produce mehtod that pushes work into the buffer queue. Synchronisation used to give access to one thread at a time to the critical section (the pushing of the queue). Do not want multiple threads pushing the queue at a time.
+- A main method that
 
