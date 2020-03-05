@@ -72,4 +72,5 @@ Nick:
 -
 
 Raghav:
+- For Java, the implementation was relatively easy. Due to keywords like synchronized, and the fact that every object has a .wait(), .notify() and .notifyAll() method by default, Java was simple and quick.
 - 
