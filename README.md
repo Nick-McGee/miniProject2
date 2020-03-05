@@ -10,7 +10,7 @@
 **Part 1 (Java program files):**
 
 *Note: To compile the code on the Linux do the following:*
-- Download the `src` directory, set the directory to the directory containg `src` directory, and then run this command: `javac src/main/*.java && java -cp src/ main.Main`
+- Inside the unzipped directory run this command: `javac src/main/*.java && java -cp src/ main.Main`
 
 HttpRequest.java:
 - HttpRequest object represents the process we are sending to the queue.
@@ -49,7 +49,7 @@ Main.java:
 **Part 2 C++ program files:**
 
 *Note: To compile the code on the Linux use the following command in the command prompt:*
-- Download `main.cpp` and run `g++ -std=c++11 -pthread -o main main.cpp && ./main`
+- Inside the unzipped directory run `g++ -std=c++11 -pthread -o main main.cpp && ./main`
 
 main.cpp:
 - Similar to the java implementation in the Main.java we get the same input variables from the user and declare necessary variables. One difference is we are using semaphores as opposed to monitors.
