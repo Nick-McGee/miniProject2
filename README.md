@@ -64,6 +64,7 @@ main.cpp:
 - Once all threads are shut down proceed to exit.
 
 **Experience with the project:**
+
 Carlos: 
 - For this project I had to learn C++ as I already had knowledge in Java. When trying to implement the similar web server request scheduler we used for the Java implementation in C++, I was really struggling. But more specficially I struggled most when I was setting up my complier, MakeFile, and other unique things I needed to write C++
 
