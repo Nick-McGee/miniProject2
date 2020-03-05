@@ -43,7 +43,8 @@ Main.java:
 - Looping over the simulated number of request, sleep for a random period of time between 0 - 100ms and then produce the request, and then finally add the requets to the process queue.
 - Stop the websever and print out the time taken to process the requests and the average time it took for each of the request to be completed.
 
-**Part 2 (C++ program files:**
+**Part 2 C++ program files:**
+
 *Note: To complile the code on the Linux use the following command in the command prompt:* 
 g++ -std=c++11 -pthread -o main main.cpp && ./main
 
